@@ -1,53 +1,59 @@
-English to Bengali Keyboard Mapping 📝➡️🅱️
-This Python project enables real-time English-to-Bengali character mapping using a custom key mapping defined in a map.txt file. It allows users to type Bengali characters effortlessly by pressing corresponding English keys on their keyboard.
+# Bengali Keyboard Mapper
 
-Features ✨
-Real-time key mapping from English to Bengali.
-Customizable mapping through an external map.txt file.
-Handles special cases like : and punctuation.
-Simple and efficient keyboard event handling using the keyboard library.
-How It Works 🛠️
-The script reads the map.txt file to load English-to-Bengali key mappings.
-When a key is pressed, the script checks if the key exists in the mapping.
-If mapped, the corresponding Bengali character is written. Otherwise, the key is processed normally.
-Requirements 📋
-Python 3.x
-keyboard library
-Installation 💻
-Clone this repository:
-git clone https://github.com/yourusername/eng-to-bengali-keyboard.git
-Navigate to the project folder:
-cd eng-to-bengali-keyboard
-Install the required library:
-pip install keyboard
-Run the script:
-python keyboard_mapper.py
-Custom Mapping 🗺️
-Edit the map.txt file to define your custom English-to-Bengali key mappings.
-Format: english_key:bengali_character
-Example:
-a:অ
-b:ব
-c:চ
-Usage Instructions 🎮
-Run the script as described in the Installation section.
-Press keys on your keyboard, and the mapped Bengali characters will be written.
-Press ESC to stop the script.
-Example map.txt File 📄
-a:অ
-b:ব
-c:চ
-d:দ
-e:এ
-f:ফ
-g:গ
-h:হ
-i:ই
-j:জ
-k:ক
-l:ল
-License 📝
-This project is open-source and available under the MIT License.
+This Python project uses the `keyboard` library to create a custom keyboard layout that maps English characters to their corresponding Bengali characters. It listens for key presses and writes Bengali characters when specific English keys are pressed.
 
-Feel free to customize, contribute, and improve this project!# English-to-bengali-keyboard
-"Python script for real-time English-to-Bengali keyboard mapping using custom character mapping and the `keyboard` library."
+## Features
+- **Custom Mapping**: English characters are mapped to Bengali characters via a `map.txt` file.
+- **Ctrl Key Support**: The `Ctrl` key is used to enable special key combinations.
+- **Dynamic Key Events**: The script listens for key press and release events and processes them accordingly.
+- **Quit on ESC**: The script stops when the `ESC` key is pressed.
+
+## Installation
+
+1. Clone this repository to your local machine:
+    ```bash
+    git clone https://github.com/yourusername/bengali-keyboard-mapper.git
+    cd bengali-keyboard-mapper
+    ```
+
+2. Install the required dependencies:
+    ```bash
+    pip install keyboard
+    ```
+
+3. Make sure the `map.txt` file is available in the project folder with the following structure:
+    ```
+    a: অ
+    b: ব
+    c: চ
+    ...
+    ```
+
+## How to Use
+
+1. **Run the script**:
+    ```bash
+    python bengali_mapper.py
+    ```
+
+2. **Map File**:
+    - The `map.txt` file contains a list of English-to-Bengali character mappings, one per line.
+    - Format: `EnglishChar:BengaliChar`, for example: `a:অ`.
+    - The file must be saved in UTF-8 encoding.
+
+3. **Control Mechanism**:
+    - Use **Ctrl** to enable special key combinations (e.g., pressing Ctrl+key for Bengali characters).
+
+4. **Quit the script**:
+    - Press the **ESC** key to stop the script.
+
+## Code Workflow
+
+- The script listens for key press and release events using the `keyboard` library.
+- When an English character is pressed, it checks if it is mapped to a Bengali character (from the `map.txt` file).
+- If the key is found in the mapping, the corresponding Bengali character is typed.
+- If the key is not found in the mapping, the character is pressed as-is.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
